@@ -17,13 +17,30 @@ let clearResult = () => {
   display.value = "";
 };
 
+function add(x, y) {
+  return x + y;
+}
+function multiply(x, y) {
+  return x * y;
+}
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+const addition = calculate(5, 3, add);
+console.log(addition);
+const multiplication = calculate(5, 3, multiply);
+console.log(multiplication);
+
 // console.log(eval("3*3"));
 
-let print = () => {
-  console.log("Teachmecode!!!");
-};
+/**
+ * Timing functions
+ */
+// let print = () => {
+//   console.log("Teachmecode!!!");
+// };
 
-console.log(setInterval(print, 3000));
+// console.log(setInterval(print, 3000));
 // console.log(setTimeout(print, 3000));
 
 // let showAlert = () => {
