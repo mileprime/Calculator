@@ -18,12 +18,15 @@ let clearResult = () => {
 };
 
 function add(x, y) {
+  // let add =(x,y) => {}
   return x + y;
 }
 function multiply(x, y) {
+  //let multiply =(x,y) => {}
   return x * y;
 }
 function calculate(a, b, operation) {
+  //let calculate = (a,b, operation) => {}
   return operation(a, b);
 }
 const addition = calculate(5, 3, add);
