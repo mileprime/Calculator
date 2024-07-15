@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table class="table">
+      <tbody>
+        <tr></tr>
+        <tr>
+          <td colspan="4"><input id="input" type="text" /></td>
+        </tr>
+        <tr>
+          <td colspan="4"><input id="result" readonly="" type="text" /></td>
+        </tr>
+
+        <tr>
+          <td><button onclick="getValue(1)">1</button></td>
+          <td><button onclick="getValue(2)">2</button></td>
+          <td><button onclick="getValue(3)">3</button></td>
+          <td><button onclick="getValue('+')">+</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="getValue(4)">4</button></td>
+          <td><button onclick="getValue(5)">5</button></td>
+          <td><button onclick="getValue(6)">6</button></td>
+          <td><button onclick="getValue('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="getValue(7)">7</button></td>
+          <td><button onclick="getValue(8)">8</button></td>
+          <td><button onclick="getValue(9)">9</button></td>
+          <td><button onclick="getValue('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="getValue(1)">0</button></td>
+          <td><button onclick="clearResult()">C</button></td>
+          <td><button onclick="getValue('*')">*</button></td>
+          <td><button onclick="showResult(showAlert)">=</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="./cal2.js"></script>
+   
+    </script>
+  </body>
+</html>
