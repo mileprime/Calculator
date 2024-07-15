@@ -4,10 +4,10 @@ let display = document.getElementById("result");
 let getValue = (x) => {
   input.value += x;
 };
-
-let showResult = (callback) => {
+// let showResult = (callback) => {}
+let showResult = () => {
   let result = eval(input.value);
-  callback();
+  //   callback();
   display.value = result;
   return result;
 };
@@ -26,6 +26,6 @@ let print = () => {
 console.log(setInterval(print, 3000));
 // console.log(setTimeout(print, 3000));
 
-let showAlert = () => {
-  alert("Hello World");
-};
+// let showAlert = () => {
+//   alert("Hello World");
+// };
