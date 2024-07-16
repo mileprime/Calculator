@@ -1,39 +1,95 @@
-let input = document.getElementById("input");
-let display = document.getElementById("result");
+// let input = document.getElementById("input");
+// let display = document.getElementById("result");
 
-let getValue = (x) => {
-  input.value += x;
-};
+// let getValue = (x) => {
+//   input.value += x;
+// };
 // let showResult = (callback) => {}
-let showResult = () => {
-  let result = eval(input.value);
-  //   callback();
-  display.value = result;
-  return result;
-};
+// let showResult = () => {
+//   let result = eval(input.value);
+//   callback();
+//   display.value = result;
+//   return result;
+// };
 
-let clearResult = () => {
-  input.value = "";
-  display.value = "";
-};
+// let clearResult = () => {
+//   input.value = "";
+//   display.value = "";
+// };
 
-let getUsers = () => {
+let prom = new Promise((resolve, reject) => {
   let users = [
-    { userName: "Ahmed", email: "Ahmed@gmail.com" },
+    { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
     { userName: "Ali", email: "Ali@gmail.com" },
   ];
-  return users;
+  if (users) {
+    resolve(users);
+  } else {
+    console.log(users, "error");
+    reject();
+  }
+});
+let OnResolve = (x) => {
+  return alert("It worked");
 };
-let findUser = (userSearchedfor) => {
-  let users = getUsers();
-  let user = users.find((m) => {
-    return m.userName == userSearchedfor;
-  });
-  //   console.log(user);
-  return user.userName;
-};
+console.log(
+  prom.then(OnResolve()).catch(() => {
+    console.log("Something worng");
+  })
+);
 
-console.log(findUser("Ali"));
+// let prom = new Promise((resolve, reject) => {
+//   let users = [
+//     { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
+//     { userName: "Ali", email: "Ali@gmail.com" },
+//   ];
+//   if (users) {
+//     resolve(users);
+//   } else {
+//     console.log(users, "error");
+//     reject();
+//   }
+// });
+// console.log(
+//   prom
+//     .then((data) => {
+//       data.console.log(data, "then working meaing resolve get called!!!");
+//     })
+//     .catch(() => {
+//       console.log("Something wrong");
+//     })
+// );
+
+// class Car {
+//   constructor(name) {
+//     this.firstName = name;
+//   }
+//   getName() {
+//     return this.firstName;
+//   }
+// }
+
+// let car1 = new Car("Ahmed");
+// car1.getName();       //Thanks to the constructor
+
+// let getUsers = () => {
+// Api call
+//   let users = [
+//     { userName: "Ahmed", email: "Ahmed@gmail.com" },
+//     { userName: "Ali", email: "Ali@gmail.com" },
+//   ];
+//   return users;
+// };
+// let findUser = (userSearchedfor) => {
+//   let users = getUsers();
+//   let user = users.find((m) => {
+//     return m.userName == userSearchedfor;
+//   });
+//   //   console.log(user);
+//   return user.userName;
+// };
+
+// console.log(findUser("Ali"));
 
 // let greet_one = "Hello";
 // let greet_two = "World";
