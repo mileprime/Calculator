@@ -1,42 +1,38 @@
-// let input = document.getElementById("input");
-// let display = document.getElementById("result");
+//fetch api
 
-// let getValue = (x) => {
-//   input.value += x;
-// };
-// let showResult = (callback) => {}
-// let showResult = () => {
-//   let result = eval(input.value);
-//   callback();
-//   display.value = result;
-//   return result;
-// };
+let data = fetch("https://fakestoreapi.com/products")
+  .then((res) => res.json())
+  .then((json) => console.log(json));
+console.log(data, "data from fetch");
 
-// let clearResult = () => {
-//   input.value = "";
-//   display.value = "";
+// let getUsers = () => {
+//   // Api call
+//   let users = [
+//     { userName: "Ahmed", email: "Ahmed@gmail.com" },
+//     { userName: "Ali", email: "Ali@gmail.com" },
+//   ];
+//   return users;
 // };
-
-let prom = new Promise((resolve, reject) => {
-  let users = [
-    { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
-    { userName: "Ali", email: "Ali@gmail.com" },
-  ];
-  if (users) {
-    resolve(users);
-  } else {
-    console.log(users, "error");
-    reject();
-  }
-});
-let OnResolve = (x) => {
-  return alert("It worked");
-};
-console.log(
-  prom.then(OnResolve()).catch(() => {
-    console.log("Something worng");
-  })
-);
+// let prom = new Promise((resolve, reject) => {
+//   let users = [
+//     { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
+//     { userName: "Ali", email: "Ali@gmail.com" },
+//   ];
+//   if (users) {
+//     resolve(users);
+//   } else {
+//     console.log(users, "error");
+//     reject();
+//   }
+// });
+// let OnResolve = (x) => {
+//   return alert("It worked");
+// };
+// console.log(
+//   prom.then(OnResolve()).catch(() => {
+//     console.log("Something worng");
+//   })
+// );
 
 // let prom = new Promise((resolve, reject) => {
 //   let users = [
@@ -99,6 +95,25 @@ console.log(
 //   console.log("Asynchronous");
 // }, 10000);
 // console.log(greet_two);
+
+// let input = document.getElementById("input");
+// let display = document.getElementById("result");
+
+// let getValue = (x) => {
+//   input.value += x;
+// };
+// let showResult = (callback) => {}
+// let showResult = () => {
+//   let result = eval(input.value);
+//   callback();
+//   display.value = result;
+//   return result;
+// };
+
+// let clearResult = () => {
+//   input.value = "";
+//   display.value = "";
+// };
 
 /**
  * callback function
