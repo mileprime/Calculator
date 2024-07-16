@@ -1,9 +1,9 @@
 //fetch api
 
-let data = fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((json) => console.log(json));
-console.log(data, "data from fetch");
+// let data = fetch("https://fakestoreapi.com/products")
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
+// console.log(data, "data from fetch");
 
 // let getUsers = () => {
 //   // Api call
@@ -13,6 +13,42 @@ console.log(data, "data from fetch");
 //   ];
 //   return users;
 // };
+/**
+ * API call
+ */
+
+let prom = new Promise((resolve, reject) => {
+  let data = fetch("https://fakestoreapi.com/products").then((res) =>
+    res.json()
+  );
+  //   .then((json) => console.log(json));
+  // console.log(data, "data from fetch");
+
+  // let users = [
+  //   { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
+  //   { userName: "Ali", email: "Ali@gmail.com" },
+  // ];
+  if (data) {
+    resolve(data);
+  } else {
+    console.log(data, "error");
+    reject();
+  }
+});
+console.log(
+  prom
+    .then((data) => {
+      console.log(data, "this is data inside then");
+    })
+    .catch(() => {
+      console.log("Broken link");
+    })
+);
+
+/**
+ * Promises
+ */
+
 // let prom = new Promise((resolve, reject) => {
 //   let users = [
 //     { userName: "Ahmed", email: "Ahmed@gmail.com", age: 99 },
